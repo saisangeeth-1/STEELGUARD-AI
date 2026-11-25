@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEELGUARD AI | Intelligent Steel Quality Inspection</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div id="app-shell">
+    <!-- Persistent Left Navigation Sidebar -->
+    <aside id="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <div class="brand-name">STEELGUARD <span class="ai-tag">AI</span></div>
+          <div class="brand-subtitle">Steel QC Command Center</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Operations</div>
+        <a class="nav-item active" data-page="overview">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </span>
+          <span>Overview</span>
+        </a>
+        <a class="nav-item" data-page="inspect">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <span>Inspect</span>
+        </a>
+        <a class="nav-item" data-page="segmentation">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
+              <line x1="8" y1="7" x2="8" y2="17"></line>
+              <line x1="16" y1="7" x2="16" y2="17"></line>
+            </svg>
+          </span>
+          <span>Strip Segmentation <span class="badge" style="font-size: 9px; padding: 1px 4px; background: rgba(6, 182, 212, 0.2); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.4); margin-left: 4px;">EXP</span></span>
+        </a>
+        <a class="nav-item" data-page="results">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </span>
+          <span>Inspection Results</span>
+        </a>
+        <a class="nav-item" data-page="history">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </span>
+          <span>History & Traceability</span>
+        </a>
+
+        <div class="nav-section-label">Intelligence</div>
+        <a class="nav-item" data-page="analytics">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </span>
+          <span>Quality Analytics</span>
+        </a>
+        <a class="nav-item" data-page="assistant">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </span>
+          <span>Inspection Intelligence</span>
+        </a>
+
+        <div class="nav-section-label">System</div>
+        <a class="nav-item" data-page="health">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </span>
+          <span>Model & Edge Health</span>
+        </a>
+        <a class="nav-item" data-page="settings">
+          <span class="nav-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </span>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="edge-device-badge">
+          <span>HOST ARCH</span>
+          <span id="sidebar-host-arch">AMD64</span>
+        </div>
+        <div class="edge-device-badge">
+          <span>OFFLINE READY</span>
+          <span style="color: var(--status-pass)">YES</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="app-main">
+      <!-- Top Application Bar -->
+      <header id="app-topbar">
+        <div class="topbar-left">
+          <div class="page-header-group">
+            <h1 class="page-title" id="topbar-page-name">Overview</h1>
+            <span class="header-divider" aria-hidden="true"></span>
+            <span class="page-subtitle" id="topbar-page-subtitle">Inspection Command Center</span>
+          </div>
+          <div class="operating-mode-badge" title="Operating offline without cloud API dependency">
+            <span class="status-dot online"></span>
+            <span>Edge Mode</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Live Telemetry Status Indicators -->
+          <div class="system-status-group">
+            <div class="status-pill offline" title="YOLOv8 Nano GC10-DET Model Status">
+              <span class="status-dot offline"></span>
+              <span class="label">YOLO:</span>
+              <span class="val" id="topbar-vision-status">NOT LOADED</span>
+            </div>
+            <div class="status-pill offline" title="Severstal Lightweight U-Net Segmentation Status">
+              <span class="status-dot offline"></span>
+              <span class="label">U-NET:</span>
+              <span class="val" id="topbar-seg-status">NOT LOADED</span>
+            </div>
+            <div class="status-pill warning" title="Local Llama ExecuTorch Engine">
+              <span class="status-dot inactive"></span>
+              <span class="label">LLAMA:</span>
+              <span class="val" id="topbar-llama-status">NOT DETECTED</span>
+            </div>
+            <div class="status-pill" title="Optical Feed">
+              <span class="status-dot inactive"></span>
+              <span class="label">CAM:</span>
+              <span class="val" id="topbar-camera-status">OFFLINE</span>
+            </div>
+          </div>
+
+          <div class="operator-badge">
+            <div class="operator-avatar">QC</div>
+            <div>
+              <div style="font-weight: 600; color: var(--text-primary); font-size: 11px;">STATION #1</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Operator Active</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Container -->
+      <div id="page-container">
+        
+        <!-- PAGE 1: OVERVIEW -->
+        <section id="view-overview" class="page-view active">
+          <div id="demo-banner-box" class="demo-banner" style="display: none;">
+            <div>
+              <span class="demo-tag">DEMO DATA</span>
+              <span>Showing demonstration dataset for command-center layout verification. Genuine measurements will populate upon model execution.</span>
+            </div>
+            <button id="btn-toggle-demo" class="btn btn-secondary" style="padding: 2px 8px; font-size: 11px;">Switch to Real Data</button>
+          </div>
+
+          <!-- Top KPI Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Total Inspections</div>
+              <div class="kpi-value" id="kpi-total-inspections">0</div>
+              <div class="kpi-sub" id="kpi-total-sub">Local database count</div>
+            </div>
+            <div class="kpi-card kpi-review">
+              <div class="kpi-label">Defects Detected</div>
+              <div class="kpi-value" id="kpi-defects-detected">0</div>
+              <div class="kpi-sub">Total localized instances</div>
+            </div>
+            <div class="kpi-card kpi-review">
+              <div class="kpi-label">Requiring Review</div>
+              <div class="kpi-value" id="kpi-requiring-review">0</div>
+              <div class="kpi-sub">Flagged for operator sign-off</div>
+            </div>
+            <div class="kpi-card kpi-pass">
+              <div class="kpi-label">Inspection Pass Rate</div>
+              <div class="kpi-value" id="kpi-pass-rate">--%</div>
+              <div class="kpi-sub">Based on validated quality rules</div>
+            </div>
+          </div>
+
+          <!-- Command Center Content Grid -->
+          <div class="overview-grid">
+            <!-- Left: Recent Inspections Activity -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span class="card-title-icon">■</span>
+                  <span>Recent Inspection Activity</span>
+                </div>
+                <button id="btn-overview-demo-toggle" class="btn btn-secondary" style="font-size: 10px; padding: 2px 6px;">View Demo Feed</button>
+              </div>
+              <div class="card-body" style="padding: 0;">
+                <div class="table-container">
+                  <table class="industrial-table">
+                    <thead>
+                      <tr>
+                        <th>Inspection ID</th>
+                        <th>Timestamp</th>
+                        <th>Steel Coil / Image</th>
+                        <th>Defects</th>
+                        <th>Top Defect</th>
+                        <th>Assessment</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="overview-recent-table-body">
+                      <tr>
+                        <td colspan="7" style="text-align: center; padding: var(--space-6); color: var(--text-muted);">
+                          No inspections recorded in local database yet.<br>
+                          Select <strong>Inspect</strong> to run an inspection or toggle demo data for UI preview.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Defect Distribution by Class -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span class="card-title-icon">■</span>
+                  <span>GC10 Defect Distribution</span>
+                </div>
+                <span style="font-size: 10px; color: var(--text-muted); font-family: var(--font-mono);">10 CLASSES</span>
+              </div>
+              <div class="card-body">
+                <div class="defect-dist-list" id="overview-defect-list">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 2: INSPECT (3-Panel Workspace) -->
+        <section id="view-inspect" class="page-view">
+          <div class="inspect-workspace">
+            
+            <div class="inspect-main-row">
+              <!-- LEFT PANEL: Image Input & Controls -->
+              <div class="industrial-card inspect-input-panel">
+                <div class="card-header">
+                  <div class="card-title">
+                    <span class="card-title-icon">1</span>
+                    <span>Image Acquisition</span>
+                  </div>
+                </div>
+                <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                  
+                  <!-- Drag and drop zone -->
+                  <div id="inspect-dropzone" class="dropzone">
+                    <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <div class="dropzone-title">Drag & Drop Steel Image</div>
+                    <div class="dropzone-sub">BMP, JPG, PNG (up to 2048×1000)</div>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                    <button type="button" id="btn-browse-file" class="btn btn-secondary" style="margin-top: 4px;">Browse File</button>
+                  </div>
+
+                  <!-- Offline Hackathon Demo Presets -->
+                  <div class="demo-preset-box" style="margin-top: 10px; margin-bottom: 8px; padding: 10px; background: rgba(0, 136, 204, 0.08); border: 1px solid rgba(0, 210, 255, 0.25); border-radius: var(--radius-sm);">
+                    <div style="font-size: 10px; font-weight: 700; color: var(--cyan-primary); text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between;">
+                      <span>⚡ Offline Demo Presets (Real Local Inference)</span>
+                      <span class="badge" style="font-size: 8px; padding: 1px 4px; background: rgba(0, 210, 255, 0.2); color: var(--cyan-primary);">1-CLICK</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                      <button type="button" class="btn btn-secondary btn-sm" id="btn-demo-critical" title="Load and run critical hole defect" style="font-size: 10px; padding: 5px 4px; text-align: left;">
+                        <span style="color: #ef4444; font-weight: 700;">●</span> Critical Hole (QR-01)
+                      </button>
+                      <button type="button" class="btn btn-secondary btn-sm" id="btn-demo-inclusion" title="Load and run inclusion defect" style="font-size: 10px; padding: 5px 4px; text-align: left;">
+                        <span style="color: #f97316; font-weight: 700;">●</span> Inclusion (QR-01)
+                      </button>
+                      <button type="button" class="btn btn-secondary btn-sm" id="btn-demo-minor" title="Load and run water spot defect" style="font-size: 10px; padding: 5px 4px; text-align: left;">
+                        <span style="color: #38bdf8; font-weight: 700;">●</span> Water Spot (QR-05)
+                      </button>
+                      <button type="button" class="btn btn-secondary btn-sm" id="btn-demo-clean" title="Load clean workpiece" style="font-size: 10px; padding: 5px 4px; text-align: left;">
+                        <span style="color: #22c55e; font-weight: 700;">●</span> Clean Steel (QR-00)
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Metadata panel -->
+                  <div class="input-file-meta" id="inspect-file-meta">
+                    <div class="row"><span class="key">Source File:</span> <span class="val" id="meta-filename">None selected</span></div>
+                    <div class="row"><span class="key">Data Mode:</span> <span class="val" id="meta-data-mode" style="color: var(--cyan-primary);">--</span></div>
+                    <div class="row"><span class="key">Dimensions:</span> <span class="val" id="meta-dimensions">-- × --</span></div>
+                    <div class="row"><span class="key">Resolution:</span> <span class="val" id="meta-resolution">-- MP</span></div>
+                    <div class="row"><span class="key">File Size:</span> <span class="val" id="meta-filesize">-- KB</span></div>
+                  </div>
+
+                  <!-- Verified GC10-DET Sample Browser -->
+                  <div class="sample-picker-title">Verified GC10-DET Sample Browser:</div>
+                  <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <div>
+                      <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">1. Defect Class Filter:</label>
+                      <select id="sample-category-select" class="sample-select">
+                        <option value="">All Verified Defects (2,279 Samples)</option>
+                        <option value="1_chongkong">#1 Punching Hole (Critical)</option>
+                        <option value="2_hanfeng">#2 Welding Line (High)</option>
+                        <option value="3_yueyawan">#3 Crescent Gap (Critical)</option>
+                        <option value="4_shuiban">#4 Water Spot (Low)</option>
+                        <option value="5_youban">#5 Oil Spot (Low)</option>
+                        <option value="6_siban">#6 Silk Spot (Medium)</option>
+                        <option value="7_yiwu">#7 Inclusion (High)</option>
+                        <option value="8_yahen">#8 Rolled Scale (High)</option>
+                        <option value="9_zhehen">#9 Crease (Medium)</option>
+                        <option value="10_yaozhed">#10 Waist Folding (High)</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">2. Verified Sample Image:</label>
+                      <select id="sample-file-select" class="sample-select">
+                        <option value="">Loading verified samples...</option>
+                      </select>
+                    </div>
+
+                    <button type="button" id="btn-load-sample" class="btn btn-secondary" style="width: 100%; padding: 6px;">
+                      <span>Load Verified GC10 Sample</span>
+                    </button>
+                  </div>
+
+                  <!-- Action Buttons -->
+                  <div style="margin-top: auto; display: flex; flex-direction: column; gap: var(--space-2);">
+                    <button id="btn-run-ai" class="btn btn-primary" style="padding: 10px; background: linear-gradient(135deg, #0088cc, #00d2ff); color: #020914; font-weight: 700;" disabled>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      <span id="btn-run-ai-text">RUN LOCAL YOLO INFERENCE</span>
+                    </button>
+                    <button id="btn-run-inspection" class="btn btn-secondary" style="padding: 7px;" disabled>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <span id="btn-run-inspection-text">EVALUATE QUALITY RULES</span>
+                    </button>
+                    <button id="btn-save-inspection" class="btn btn-secondary" style="padding: 8px; border-color: var(--cyan-muted); color: var(--cyan-primary);" disabled>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                        <polyline points="7 3 7 8 15 8"></polyline>
+                      </svg>
+                      <span id="btn-save-inspection-text">SAVE TO DATABASE</span>
+                    </button>
+                    <div style="display: flex; gap: var(--space-2);">
+                      <button id="btn-reset-inspection" class="btn btn-secondary" style="flex: 1;">Reset</button>
+                      <button id="btn-clear-image" class="btn btn-secondary" style="flex: 1;">Clear</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- CENTER PANEL: Image Viewer -->
+              <div class="inspect-viewer-panel">
+                <div class="viewer-toolbar">
+                  <div class="toolbar-group">
+                    <span style="font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-right: 6px;">VIEWER:</span>
+                    <button id="btn-view-fit" class="toolbar-btn" title="Fit to Screen">Fit Screen</button>
+                    <button id="btn-view-100" class="toolbar-btn" title="Original 1:1 Scale">100%</button>
+                    <button id="btn-zoom-in" class="toolbar-btn" title="Zoom In">+</button>
+                    <button id="btn-zoom-out" class="toolbar-btn" title="Zoom Out">-</button>
+                    <span id="zoom-level-text" style="font-size: 11px; font-family: var(--font-mono); color: var(--cyan-primary); padding: 0 4px;">100%</span>
+                  </div>
+
+                  <div class="toolbar-group">
+                    <button id="btn-toggle-bbox" class="toolbar-btn active" title="Toggle Defect Bounding Boxes">BBoxes [ON]</button>
+                    <button id="btn-toggle-annotated" class="toolbar-btn" title="Toggle Annotated / Raw View">Raw Mode</button>
+                  </div>
+                </div>
+
+                <div class="viewer-canvas-wrap" id="viewer-container">
+                  <div class="viewer-empty-state" id="viewer-empty">
+                    <svg class="viewer-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <div>No steel surface image loaded</div>
+                    <div style="font-size: 10px; color: var(--text-muted);">Load an image from the left panel to inspect surface quality</div>
+                  </div>
+                  <canvas id="inspection-canvas" style="display: none; cursor: crosshair;"></canvas>
+                </div>
+              </div>
+
+              <!-- RIGHT PANEL: Detection Results -->
+              <div class="industrial-card inspect-results-panel">
+                <div class="card-header">
+                  <div class="card-title">
+                    <span class="card-title-icon">3</span>
+                    <span>Localized Defects</span>
+                  </div>
+                  <span id="detection-count-badge" class="badge-verdict pending">0 FOUND</span>
+                </div>
+                <div style="padding: var(--space-2) var(--space-3) 0;">
+                  <div id="right-panel-mode-banner" class="mode-banner-gt" style="display: none;">
+                    GROUND TRUTH / DATASET ANNOTATIONS
+                  </div>
+                </div>
+                <div class="results-list" id="inspect-detection-list">
+                  <div style="text-align: center; padding: var(--space-6); color: var(--text-muted); font-size: var(--text-xs);">
+                    Awaiting inspection execution.<br>Detected bounding boxes and confidence metrics will appear here.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM PANEL: Quality Assessment Engine -->
+            <div class="inspect-assessment-panel">
+              <div class="verdict-large">
+                <div class="verdict-box pending" id="verdict-badge">PENDING</div>
+                <div class="verdict-meta">
+                  <div class="label">Rule-Based Quality Assessment</div>
+                  <div class="detail" id="verdict-explanation">No inspection run on current workpiece. Quality assessment pending input.</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div id="assessment-rules-applied" style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted); text-align: right;">
+                  Applied Rules: None
+                </div>
+                <button id="btn-explain-ai" class="btn btn-ai-advisory">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Explain Inspection</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        
+        <!-- PAGE: STRIP SEGMENTATION (PHASE 4C) -->
+        <section id="view-segmentation" class="page-view">
+          <!-- Model Separation Banner -->
+          <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #06b6d4; color: #000; font-weight: 700; padding: 2px 6px; border-radius: 2px; font-size: 10px; font-family: var(--font-mono);">PHASE 4C</span>
+              <span style="font-size: 12px; color: var(--text-primary);">
+                <strong>Severstal Lightweight U-Net</strong> — Isolated Pixel Segmentation Engine (Native 1600×256). Decoupled from GC10 YOLO detector.
+              </span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">
+              SHA-256: <span style="color: var(--status-pass);">10666e11... [VERIFIED MATCH]</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 310px 1fr 340px; gap: var(--space-4); align-items: start;">
+            <!-- LEFT PANEL: Sample Ingestion & Controls -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span class="card-title-icon">1</span>
+                  <span>Sample Ingestion</span>
+                </div>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                <!-- Filter by Defect Class -->
+                <div>
+                  <label style="font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Filter Test Split:</label>
+                  <select id="seg-filter-select" class="sample-select" style="width: 100%; margin-top: 4px; padding: 6px;">
+                    <option value="all">All Test Strip Samples</option>
+                    <option value="clean">Clean Surface (Defect-Free)</option>
+                    <option value="1">Class 1: Pitted Surface</option>
+                    <option value="2">Class 2: Cracks / Seams</option>
+                    <option value="3">Class 3: Scratches</option>
+                    <option value="4">Class 4: Rolled Scale</option>
+                    <option value="multiclass">Multiclass Defects</option>
+                  </select>
+                </div>
+
+                <!-- Sample List Dropdown -->
+                <div>
+                  <label style="font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Severstal Test Strip:</label>
+                  <select id="seg-sample-select" class="sample-select" style="width: 100%; margin-top: 4px; padding: 6px; font-family: var(--font-mono); font-size: 11px;">
+                    <option value="">Loading test samples...</option>
+                  </select>
+                </div>
+
+                <!-- Upload Custom Strip File -->
+                <div id="seg-dropzone" class="dropzone" style="padding: var(--space-3); min-height: 80px;">
+                  <div class="dropzone-title" style="font-size: 12px;">Or Upload Severstal Strip</div>
+                  <div class="dropzone-sub" style="font-size: 10px;">1600×256 BMP/JPG/PNG</div>
+                  <input type="file" id="seg-file-input" accept="image/*" style="display: none;">
+                  <button type="button" id="btn-seg-browse" class="btn btn-secondary" style="margin-top: 4px; font-size: 10px; padding: 3px 8px;">Browse Strip File</button>
+                </div>
+
+                <!-- Strip Metadata -->
+                <div class="input-file-meta" style="font-size: 11px; padding: 8px;">
+                  <div class="row"><span class="key">Active File:</span> <span class="val" id="seg-meta-filename">None selected</span></div>
+                  <div class="row"><span class="key">Geometry:</span> <span class="val" id="seg-meta-geom">1600 × 256 (6.25:1)</span></div>
+                  <div class="row"><span class="key">Ground Truth:</span> <span class="val" id="seg-meta-gt" style="color: var(--cyan-primary);">--</span></div>
+                </div>
+
+                <!-- Run Inference Action -->
+                <button id="btn-seg-run" class="btn btn-primary" style="width: 100%; padding: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span>RUN U-NET SEGMENTATION</span>
+                </button>
+
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" id="seg-save-db-check" checked style="accent-color: var(--cyan-primary);">
+                  <label for="seg-save-db-check" style="font-size: 11px; color: var(--text-secondary); cursor: pointer;">Save to Inspection Traceability DB</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- CENTER PANEL: Native Panoramic Canvas & Layer Controls -->
+            <div class="industrial-card" style="min-height: 480px;">
+              <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+                <div class="card-title">
+                  <span class="card-title-icon">2</span>
+                  <span>Panoramic Strip Inspection Viewer</span>
+                </div>
+                <!-- View Mode & Scale Toggles -->
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <div class="btn-group" style="display: flex; background: var(--bg-input); border-radius: var(--radius-sm); border: 1px solid var(--border-default); padding: 2px;">
+                    <button id="btn-view-mode-overlay" class="btn btn-sm btn-ghost active" style="font-size: 10px; padding: 2px 8px;">Overlay</button>
+                    <button id="btn-view-mode-sbs" class="btn btn-sm btn-ghost" style="font-size: 10px; padding: 2px 8px;">Side-by-Side</button>
+                    <button id="btn-view-mode-predonly" class="btn btn-sm btn-ghost" style="font-size: 10px; padding: 2px 8px;">Mask Only</button>
+                  </div>
+                  <button id="btn-seg-toggle-scale" class="btn btn-secondary" style="font-size: 10px; padding: 3px 8px;">Fit Width</button>
+                </div>
+              </div>
+
+              <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-3);">
+                <!-- Layer Controls Toolbar -->
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: var(--bg-panel); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <!-- Opacity Slider -->
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">MASK OPACITY:</span>
+                    <input type="range" id="seg-opacity-slider" min="0" max="100" value="65" style="width: 80px; accent-color: var(--cyan-primary);">
+                    <span id="seg-opacity-val" style="font-size: 11px; font-family: var(--font-mono); color: var(--cyan-primary); width: 32px;">65%</span>
+                  </div>
+
+                  <!-- Layer Visibility -->
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 11px;">
+                    <label style="display: flex; align-items: center; gap: 4px; cursor: pointer; color: var(--text-secondary);">
+                      <input type="checkbox" id="seg-layer-base" checked style="accent-color: var(--cyan-primary);"> Base Image
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 4px; cursor: pointer; color: var(--text-secondary);">
+                      <input type="checkbox" id="seg-layer-pred" checked style="accent-color: #06b6d4;"> Predicted Mask
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 4px; cursor: pointer; color: var(--text-secondary);">
+                      <input type="checkbox" id="seg-layer-gt" checked style="accent-color: #10b981;"> Ground Truth
+                    </label>
+                  </div>
+
+                  <!-- Class Filter Toggles -->
+                  <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: var(--font-mono);">
+                    <label style="display: flex; align-items: center; gap: 3px; cursor: pointer; color: #fbbf24;">
+                      <input type="checkbox" id="seg-cls-1" checked style="accent-color: #fbbf24;"> C1: Pits
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 3px; cursor: pointer; color: #06b6d4;">
+                      <input type="checkbox" id="seg-cls-2" checked style="accent-color: #06b6d4;"> C2: Cracks
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 3px; cursor: pointer; color: #ef4444;">
+                      <input type="checkbox" id="seg-cls-3" checked style="accent-color: #ef4444;"> C3: Scratches
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 3px; cursor: pointer; color: #22c55e;">
+                      <input type="checkbox" id="seg-cls-4" checked style="accent-color: #22c55e;"> C4: Scale
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Panoramic Canvas Area -->
+                <div id="seg-panoramic-wrapper" style="position: relative; width: 100%; background: #04070e; border: 1px solid var(--border-default); border-radius: var(--radius-sm); overflow-x: auto; overflow-y: hidden; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px;">
+                  <!-- Native 1600x256 Canvas -->
+                  <canvas id="seg-canvas" width="1600" height="256" style="max-width: 100%; height: auto; aspect-ratio: 1600 / 256; display: block; background: #000; box-shadow: 0 4px 16px rgba(0,0,0,0.6);"></canvas>
+                  
+                  <!-- Secondary Canvas for Side-by-Side Mode (hidden by default) -->
+                  <div id="seg-sbs-container" style="display: none; width: 100%; margin-top: 12px; flex-direction: column; gap: 8px;">
+                    <div style="font-size: 11px; font-weight: 600; color: #10b981; font-family: var(--font-mono);">GROUND TRUTH ANNOTATION MASK (1600×256):</div>
+                    <canvas id="seg-gt-canvas" width="1600" height="256" style="max-width: 100%; height: auto; aspect-ratio: 1600 / 256; display: block; background: #000;"></canvas>
+                  </div>
+
+                  <!-- Placeholder Message when no sample is loaded -->
+                  <div id="seg-canvas-placeholder" style="position: absolute; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text-muted); font-size: 12px; pointer-events: none;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.6;">
+                      <rect x="2" y="7" width="20" height="10" rx="2" ry="2"></rect>
+                      <line x1="8" y1="7" x2="8" y2="17"></line>
+                      <line x1="16" y1="7" x2="16" y2="17"></line>
+                    </svg>
+                    <span>Select a Severstal sample or upload a strip image to preview</span>
+                  </div>
+                </div>
+
+                <!-- Inspection Status Banner -->
+                <div id="seg-status-banner" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; background: var(--bg-panel); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 11px; font-family: var(--font-mono);">
+                  <div>STATUS: <span id="seg-status-text" style="color: var(--text-muted);">AWAITING INFERENCE</span></div>
+                  <div>INFERENCE TIME: <span id="seg-latency-text" style="color: var(--cyan-primary);">-- ms</span></div>
+                  <div>DEVICE: <span id="seg-device-text" style="color: var(--text-secondary);">--</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT PANEL: Telemetry & Per-Class Area Telemetry -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span class="card-title-icon">3</span>
+                  <span>Defect & Pixel Telemetry</span>
+                </div>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                <!-- Verdict Card -->
+                <div id="seg-verdict-card" style="padding: 10px; border-radius: var(--radius-sm); background: var(--bg-panel); border: 1px solid var(--border-subtle); text-align: center;">
+                  <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Defect Presence Verdict</div>
+                  <div id="seg-verdict-title" style="font-size: 16px; font-weight: 700; color: var(--text-secondary); margin-top: 2px;">--</div>
+                  <div id="seg-verdict-sub" style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 2px;">No inference run yet</div>
+                </div>
+
+                <!-- Per-Class Metrics Table -->
+                <div>
+                  <div style="font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 6px;">4-Class Pixel Area Breakdown:</div>
+                  <table class="industrial-table" style="font-size: 11px; font-family: var(--font-mono);">
+                    <thead>
+                      <tr>
+                        <th>Class</th>
+                        <th style="text-align: right;">Pixels</th>
+                        <th style="text-align: right;">Area %</th>
+                      </tr>
+                    </thead>
+                    <tbody id="seg-metrics-table-body">
+                      <tr>
+                        <td style="color: #fbbf24;">● C1 Pitted Surface</td>
+                        <td style="text-align: right;" id="seg-val-c1-px">0</td>
+                        <td style="text-align: right;" id="seg-val-c1-pct">0.00%</td>
+                      </tr>
+                      <tr>
+                        <td style="color: #06b6d4;">● C2 Cracks / Seams</td>
+                        <td style="text-align: right;" id="seg-val-c2-px">0</td>
+                        <td style="text-align: right;" id="seg-val-c2-pct">0.00%</td>
+                      </tr>
+                      <tr>
+                        <td style="color: #ef4444;">● C3 Scratches</td>
+                        <td style="text-align: right;" id="seg-val-c3-px">0</td>
+                        <td style="text-align: right;" id="seg-val-c3-pct">0.00%</td>
+                      </tr>
+                      <tr>
+                        <td style="color: #22c55e;">● C4 Rolled Scale</td>
+                        <td style="text-align: right;" id="seg-val-c4-px">0</td>
+                        <td style="text-align: right;" id="seg-val-c4-pct">0.00%</td>
+                      </tr>
+                      <tr style="border-top: 1px solid var(--border-default); font-weight: 700;">
+                        <td style="color: var(--text-primary);">Total Defect Area</td>
+                        <td style="text-align: right; color: var(--text-primary);" id="seg-val-tot-px">0</td>
+                        <td style="text-align: right; color: var(--text-primary);" id="seg-val-tot-pct">0.00%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Ground Truth vs Prediction Comparison (when available) -->
+                <div id="seg-gt-comparison-box" style="display: none; background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px; font-size: 11px; font-family: var(--font-mono);">
+                  <div style="font-weight: 600; color: #10b981; margin-bottom: 4px;">GROUND TRUTH VERIFICATION:</div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>GT Total Defect Pixels:</span>
+                    <span id="seg-gt-tot-px" style="color: var(--text-primary);">--</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>GT Defect Area %:</span>
+                    <span id="seg-gt-tot-pct" style="color: var(--text-primary);">--</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>GT Active Classes:</span>
+                    <span id="seg-gt-classes" style="color: var(--text-primary);">--</span>
+                  </div>
+                </div>
+
+                <!-- Model Architecture Info Box -->
+                <div style="background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px; font-size: 10px; font-family: var(--font-mono); color: var(--text-secondary); display: flex; flex-direction: column; gap: 3px;">
+                  <div><strong style="color: var(--text-primary);">Model:</strong> Lightweight U-Net (PyTorch)</div>
+                  <div><strong style="color: var(--text-primary);">Parameters:</strong> 1.94M (base_channels=16)</div>
+                  <div><strong style="color: var(--text-primary);">Trained Epoch:</strong> 12 / 12 (IoU: 0.2397)</div>
+                  <div><strong style="color: var(--text-primary);">Isolation:</strong> Decoupled from GC10 YOLO</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- PAGE 3: INSPECTION RESULTS -->
+        <section id="view-results" class="page-view">
+          <div class="report-container">
+            <!-- Report Header Banner -->
+            <div class="report-header-banner">
+              <div class="report-title-meta">
+                <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Certificate of Industrial Inspection</div>
+                <div class="report-id" id="report-insp-id">No Inspection Selected</div>
+                <div style="font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono);">
+                  Timestamp: <span id="report-timestamp">--</span> | Workpiece: <span id="report-filename">--</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <span id="report-source-badge" class="badge-verdict pending">NO DATA</span>
+                <button id="btn-print-report" class="btn btn-secondary" style="gap: 4px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                  <span>Export PDF / Print</span>
+                </button>
+                <button id="btn-export-report-json" class="btn btn-secondary" style="gap: 4px;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>JSON</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Two-column Report Details Grid -->
+            <div class="report-grid">
+              <!-- Left: Canvas Image Preview & Defect Table -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div class="industrial-card">
+                  <div class="card-header">
+                    <div class="card-title"><span>Annotated Workpiece Surface</span></div>
+                    <span id="report-canvas-meta" style="font-size: 11px; font-family: var(--font-mono); color: var(--text-muted);">2048 × 1000 px</span>
+                  </div>
+                  <div class="card-body" style="padding: 0;">
+                    <div class="report-preview-canvas" id="report-canvas-container">
+                      <canvas id="report-canvas"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="industrial-card">
+                  <div class="card-header">
+                    <div class="card-title"><span>Defect Instances Registry</span></div>
+                    <span id="report-defects-count-badge" class="badge-verdict pending">0 DEFECTS</span>
+                  </div>
+                  <div class="card-body" style="padding: 0;">
+                    <div class="table-container">
+                      <table class="industrial-table">
+                        <thead>
+                          <tr>
+                            <th>Defect ID</th>
+                            <th>Class Name</th>
+                            <th>Criticality</th>
+                            <th>Confidence</th>
+                            <th>Coordinates [X1, Y1, X2, Y2]</th>
+                            <th>Dimensions</th>
+                            <th>Area</th>
+                          </tr>
+                        </thead>
+                        <tbody id="report-defect-table-body">
+                          <tr><td colspan="7" style="text-align: center; padding: var(--space-4); color: var(--text-muted);">No defect data loaded</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Assessment Verdict, Rule Breakdown & Operator Notes -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div class="industrial-card">
+                  <div class="card-header">
+                    <div class="card-title"><span>Quality Assessment Verdict</span></div>
+                  </div>
+                  <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                    <div class="verdict-box pending" id="report-verdict-box" style="text-align: center; font-size: 18px; padding: 12px;">PENDING</div>
+                    <div id="report-verdict-summary" style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5;">--</div>
+                    <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-top: 4px;">Applied Quality Rules:</div>
+                    <div id="report-rules-list" style="display: flex; flex-direction: column; gap: 4px; font-size: 11px; font-family: var(--font-mono);">
+                      <span style="color: var(--text-muted);">None applied</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="industrial-card">
+                  <div class="card-header">
+                    <div class="card-title"><span>Operator Sign-off & Notes</span></div>
+                  </div>
+                  <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                    <div>
+                      <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Review Status:</label>
+                      <select id="report-review-status-select" class="sample-select" style="margin-top: 2px;">
+                        <option value="UNREVIEWED">UNREVIEWED (Initial Auto-Eval)</option>
+                        <option value="CONFIRMED">CONFIRMED (Operator Approved)</option>
+                        <option value="FLAGGED">FLAGGED (Requires Metallurgical Lab)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Operator Notes & Actions:</label>
+                      <textarea id="report-notes-textarea" class="report-textarea" placeholder="Add engineering remarks, shear trimming instructions, or customer specifications..."></textarea>
+                    </div>
+                    <button id="btn-save-report-notes" class="btn btn-secondary" style="width: 100%;">
+                      <span>Update Sign-off & Notes</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 4: HISTORY & TRACEABILITY -->
+        <section id="view-history" class="page-view">
+          <div class="industrial-card">
+            <div class="card-header">
+              <div class="card-title">
+                <span class="card-title-icon">■</span>
+                <span>Inspection Traceability Log</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2);">
+                <button id="btn-history-refresh" class="btn btn-secondary">Refresh</button>
+                <button id="btn-history-export-csv" class="btn btn-outline-cyan">Export CSV</button>
+              </div>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="filter-bar">
+              <div class="filter-group">
+                <input type="text" id="history-search-input" class="input-search" placeholder="Search by Inspection ID, filename, notes...">
+              </div>
+              <div class="filter-group">
+                <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Status:</label>
+                <select id="history-filter-status" class="sample-select" style="width: auto;">
+                  <option value="ALL">All Verdicts</option>
+                  <option value="PASS">PASS</option>
+                  <option value="REVIEW REQUIRED">REVIEW REQUIRED</option>
+                  <option value="REJECT">REJECT</option>
+                  <option value="ASSESSMENT PENDING">PENDING</option>
+                </select>
+
+                <label style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Source:</label>
+                <select id="history-filter-source" class="sample-select" style="width: auto;">
+                  <option value="ALL">All Sources</option>
+                  <option value="GROUND_TRUTH">Ground Truth (GC10)</option>
+                  <option value="AI_INFERENCE">AI Inference</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="card-body" style="padding: 0;">
+              <div class="table-container">
+                <table class="industrial-table">
+                  <thead>
+                    <tr>
+                      <th>Inspection ID</th>
+                      <th>Timestamp (UTC)</th>
+                      <th>Workpiece File</th>
+                      <th>Source</th>
+                      <th>Defects</th>
+                      <th>Assessment</th>
+                      <th>Review Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="history-table-body">
+                    <tr>
+                      <td colspan="8" style="text-align: center; padding: var(--space-8); color: var(--text-muted);">
+                        No inspections recorded in SQLite database yet.<br>
+                        Inspect a steel sample and click <strong>SAVE TO DATABASE</strong> to record an audit entry.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 5: QUALITY ANALYTICS -->
+        <section id="view-analytics" class="page-view">
+          <div class="industrial-card">
+            <div class="card-header">
+              <div class="card-title"><span>Statistical Quality Analytics</span></div>
+            </div>
+            <div class="card-body">
+              <div style="padding: var(--space-6); text-align: center; color: var(--text-muted); font-size: var(--text-sm);">
+                Aggregates defect frequency over production runs, distinguishing detection volume from defective product rates.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 6: AI QUALITY ASSISTANT -->
+        <section id="view-assistant" class="page-view">
+          <div class="industrial-card">
+            <div class="card-header">
+              <div class="card-title"><span>Inspection Intelligence — GC10 Detection</span></div>
+              <span class="badge-verdict pending" id="assistant-rules-badge">DETERMINISTIC RULES</span>
+            </div>
+            <div class="card-body">
+              <p style="color: var(--text-muted); font-size: var(--text-xs); margin-bottom: var(--space-3);">Deterministic GC10 quality assessment engine. Immutable verdicts and strict rule justifications.</p>
+              <div id="intelligence-content" class="intelligence-content" role="status" aria-live="polite" data-status="empty">
+                Run YOLO on a steel image to view its inspection summary.
+              </div>
+            </div>
+          </div>
+
+          <!-- EXECUTORCH LOCAL ADVISORY CARD -->
+          <div class="industrial-card" id="card-advisory" style="margin-top: var(--space-4);">
+            <div class="card-header advisory-card-header">
+              <div class="card-title advisory-card-title">
+                <span class="advisory-tag-llm" id="advisory-llm-label">LLM</span>
+                <span class="advisory-heading-text" id="advisory-heading">ExecuTorch Local Advisory — Llama 3.2 1B Instruct</span>
+              </div>
+              <span class="badge-verdict pending" id="advisory-badge">CHECKING RUNTIME</span>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; gap: var(--space-4); align-items: center; justify-content: space-between; margin-bottom: var(--space-3); flex-wrap: wrap;">
+                <span style="font-size: var(--text-xs); color: var(--text-muted);" id="advisory-runtime-info">Engine: ExecuTorch 1.5.1 CPU · Model: Llama 3.2 1B INT4 · Transport: Safe Local</span>
+                <button type="button" id="btn-request-advisory" class="btn btn-primary" style="font-size: var(--text-xs); padding: 6px 14px;" disabled>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span>Request Llama Advisory</span>
+                </button>
+              </div>
+              <div id="advisory-content" class="intelligence-content" role="region" aria-label="Advisory Plan" data-status="empty">
+                <p>Run a YOLO inspection first to generate the grounded ExecuTorch advisory plan.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 7: MODEL & EDGE HEALTH -->
+        <section id="view-health" class="page-view">
+          <div class="industrial-card">
+            <div class="card-header">
+              <div class="card-title"><span>Model & Host Edge Telemetry</span></div>
+              <button id="btn-refresh-health" class="btn btn-secondary">Refresh Telemetry</button>
+            </div>
+            <div class="card-body">
+              <div id="health-telemetry-dump" style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); white-space: pre-wrap; background: var(--bg-panel); padding: var(--space-4); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                Loading genuine host diagnostics...
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 8: SETTINGS & MODEL CONFIGURATION -->
+        <section id="view-settings" class="page-view">
+          <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+            <!-- Model Selection & Rollback Card -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title"><span>Vision Model Configuration & Rollback</span></div>
+                <span class="badge-verdict pass" id="settings-active-badge">ACTIVE: CANDIDATE</span>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div>
+                  <label style="font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Select Active YOLOv8 Model Checkpoint:</label>
+                  <div style="display: flex; gap: var(--space-3); margin-top: 6px;">
+                    <select id="settings-model-select" class="sample-select" style="flex: 1; padding: 8px;">
+                      <option value="candidate">YOLOv8 Nano (NEU-Inclusion Augmented) [Candidate: v2.0-neu-inclusion] - Active</option>
+                      <option value="baseline">YOLOv8 Nano (GC10 Baseline) [Rollback Baseline: v1.0-gc10-baseline]</option>
+                    </select>
+                    <button id="btn-switch-model" class="btn btn-primary" style="padding: 8px 16px;">Switch Active Model</button>
+                  </div>
+                </div>
+
+                <!-- Model Identity Card -->
+                <div id="settings-model-meta-card" style="background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: var(--space-3); font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 4px;">
+                  <div><strong style="color: var(--text-primary);">Active Checkpoint:</strong> <span id="settings-meta-name">YOLOv8 Nano (NEU-Inclusion Augmented)</span></div>
+                  <div><strong style="color: var(--text-primary);">Version:</strong> <span id="settings-meta-version" style="color: var(--cyan-primary);">v2.0-neu-inclusion</span></div>
+                  <div><strong style="color: var(--text-primary);">SHA-256 Hash:</strong> <span id="settings-meta-hash" style="color: var(--status-pass); word-break: break-all;">41ce4fd1099db9bce7e93b734bcfba40810fa365f1e58a82c30da8a24a3f8e2c</span> <span id="settings-meta-verified" style="color: var(--status-pass);">[VERIFIED MATCH]</span></div>
+                  <div><strong style="color: var(--text-primary);">Inference Device:</strong> <span id="settings-meta-device">NVIDIA GeForce RTX 5050 Laptop GPU (CUDA:0)</span></div>
+                  <div><strong style="color: var(--text-primary);">Role / Description:</strong> <span id="settings-meta-desc" style="color: var(--text-secondary);">Fine-tuned on GC10-DET + 382 NEU-DET Inclusion samples. Target class (7_yiwu) AP@50 increased to 30.54% (+15.56%), test mAP@50 is 64.14%.</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quality Assessment & Thresholds Card -->
+            <div class="industrial-card">
+              <div class="card-header">
+                <div class="card-title"><span>Inference Parameters & Quality Rules Settings</span></div>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                  <div>
+                    <label style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">CONFIDENCE THRESHOLD (CONF): <span id="lbl-conf-val" style="color: var(--cyan-primary);">0.25</span></label>
+                    <input type="range" id="input-conf-thresh" min="0.05" max="0.95" step="0.05" value="0.25" style="width: 100%; margin-top: 6px;">
+                    <div style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">Filters detections below this probability. Standard industrial default is 0.25.</div>
+                  </div>
+                  <div>
+                    <label style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">NMS IOU OVERLAP THRESHOLD (IOU): <span id="lbl-iou-val" style="color: var(--cyan-primary);">0.45</span></label>
+                    <input type="range" id="input-iou-thresh" min="0.10" max="0.90" step="0.05" value="0.45" style="width: 100%; margin-top: 6px;">
+                    <div style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">Suppresses redundant duplicate bounding boxes during Non-Maximum Suppression.</div>
+                  </div>
+                </div>
+
+                <div style="font-size: 11px; color: var(--text-secondary); background: var(--bg-panel); padding: var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <strong style="color: var(--text-primary);">Deterministic Quality Rules Engine Status:</strong> ACTIVE & DECOUPLED.<br>
+                  Rules QR-00 through QR-05 are evaluated strictly against verified bounding boxes and defect classifications. Zero AI hallucinations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/viewer.js"></script>
+  <script src="js/intelligence.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

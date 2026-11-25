@@ -1,0 +1,75 @@
+{
+  "curated_samples": [
+    {
+      "id": "img_01_3402617700_01009",
+      "filename": "img_01_3402617700_01009.jpg",
+      "category": "critical_defect",
+      "title": "Critical Crescent Gap (Edge Defect)",
+      "description": "Severe edge perforation risking coil breakage under rolling tension.",
+      "dataset": "GC10-DET",
+      "split": "test (held-out)",
+      "sha256": "2cdb2c9a9830c4ad36a15f564318a28a53f4541186c02730a478bac590990064",
+      "size_bytes": 233522,
+      "yolo_label_file": "img_01_3402617700_01009.txt",
+      "yolo_labels": [
+        "2 0.908936 0.578000 0.103027 0.560000"
+      ],
+      "voc_xml_file": "img_01_3402617700_01009.xml"
+    },
+    {
+      "id": "img_02_4402623300_00034",
+      "filename": "img_02_4402623300_00034.jpg",
+      "category": "inclusion_defect",
+      "title": "Inclusion / Foreign Object Defect",
+      "description": "Non-metallic foreign inclusion defect validated by fine-tuned model.",
+      "dataset": "GC10-DET",
+      "split": "test (held-out)",
+      "sha256": "0a7d9a9c5cfa4ea18fac1f92407d087c916a7dcf785530bf7ef366c2f2373dc6",
+      "size_bytes": 448748,
+      "yolo_label_file": "img_02_4402623300_00034.txt",
+      "yolo_labels": [
+        "6 0.213379 0.176000 0.047852 0.136000"
+      ],
+      "voc_xml_file": "img_02_4402623300_00034.xml"
+    },
+    {
+      "id": "img_01_425006600_00905",
+      "filename": "img_01_425006600_00905.jpg",
+      "category": "minor_defect",
+      "title": "Minor Water Spot (Cosmetic Surface Defect)",
+      "description": "Low-criticality cosmetic defect triggering operator review without immediate scrap.",
+      "dataset": "GC10-DET",
+      "split": "test (held-out)",
+      "sha256": "dd5e28e918a008c01c943795a62b4f379a54a759dc7903533b903071690e93e8",
+      "size_bytes": 415298,
+      "yolo_label_file": "img_01_425006600_00905.txt",
+      "yolo_labels": [
+        "3 0.730957 0.441500 0.165039 0.377000"
+      ],
+      "voc_xml_file": "img_01_425006600_00905.xml"
+    },
+    {
+      "id": "clean_steel_strip_000789191",
+      "filename": "000789191.jpg",
+      "category": "clean_sample",
+      "title": "Verified Clean Steel Strip Surface",
+      "description": "Defect-free steel strip surface with zero anomalies, resulting in PASS verdict.",
+      "dataset": "Severstal Steel Strip Defect Detection",
+      "split": "test (held-out, test_manifest.csv has_defect=0)",
+      "sha256": "49d473c245106cb61a32179d7606a6d72c92ee4e49c4989ea54b168f5a348fb5",
+      "size_bytes": 102844
+    },
+    {
+      "id": "severstal_scratch_0007a71bf",
+      "filename": "0007a71bf.jpg",
+      "category": "segmentation_defect",
+      "title": "Severstal Surface Scratch (Pixel-Level Segmentation)",
+      "description": "Continuous thin longitudinal scratch localized by dual-model U-Net.",
+      "dataset": "Severstal Steel Strip Defect Detection",
+      "split": "test (held-out, test_manifest.csv has_defect=1, Class 3)",
+      "sha256": "3bb6d39d4b4c2c60c2333d37804a389314899ea20dc976c1aca1d8bc0047ebc6",
+      "size_bytes": 98344,
+      "ground_truth_mask": "0007a71bf.png"
+    }
+  ]
+}

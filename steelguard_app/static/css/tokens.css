@@ -1,0 +1,90 @@
+/* STEELGUARD AI - Design Tokens */
+:root {
+  /* Color Palette - Industrial Dark Graphite & Navy */
+  --bg-app: #080c14;
+  --bg-sidebar: #0b111e;
+  --bg-topbar: #0d1527;
+  --bg-panel: #111a2e;
+  --bg-card: #152038;
+  --bg-card-hover: #192745;
+  --bg-input: #0a0f1d;
+  --bg-surface-elevated: #1a2744;
+
+  /* Borders & Dividers */
+  --border-subtle: #1e2c4a;
+  --border-default: #283a62;
+  --border-strong: #3b5288;
+  --border-focus: #00d2ff;
+
+  /* Accent Colors */
+  --cyan-primary: #00d2ff;
+  --cyan-muted: #1a6f8f;
+  --cyan-subtle: rgba(0, 210, 255, 0.08);
+
+  /* Status Colors */
+  --status-pass: #10b981;
+  --status-pass-bg: rgba(16, 185, 129, 0.12);
+  --status-pass-border: #059669;
+
+  --status-review: #f59e0b;
+  --status-review-bg: rgba(245, 158, 11, 0.12);
+  --status-review-border: #d97706;
+
+  --status-reject: #ef4444;
+  --status-reject-bg: rgba(239, 68, 68, 0.12);
+  --status-reject-border: #dc2626;
+
+  --status-pending: #64748b;
+  --status-pending-bg: rgba(100, 116, 139, 0.12);
+  --status-pending-border: #475569;
+
+  /* Defect Class Category Colors (Distinct, high-contrast) */
+  --defect-chongkong: #ef4444; /* Punching Hole - Critical */
+  --defect-hanfeng: #ec4899;   /* Welding Line - High */
+  --defect-yueyawan: #f97316;  /* Crescent Gap - Critical */
+  --defect-shuiban: #38bdf8;   /* Water Spot - Low */
+  --defect-youban: #fbbf24;    /* Oil Spot - Low */
+  --defect-siban: #a855f7;     /* Silk Spot - Medium */
+  --defect-yiwu: #e11d48;      /* Inclusion - High */
+  --defect-yahen: #eab308;     /* Rolled-in Scale - High */
+  --defect-zhehen: #14b8a6;    /* Crease - Medium */
+  --defect-yaozhe: #f43f5e;    /* Waist Folding - High */
+
+  /* Text & Typography */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-invert: #080c14;
+
+  /* Font Families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Typography Scale */
+  --text-xs: 0.6875rem; /* 11px */
+  --text-sm: 0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-lg: 1.0625rem; /* 17px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Radii & Shadows */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-panel: 0 4px 12px 0 rgba(0, 0, 0, 0.45);
+
+  /* Layout dimensions */
+  --sidebar-width: 240px;
+  --topbar-height: 52px;
+}

@@ -1,0 +1,8 @@
+{
+  "active_model_key": "candidate",
+  "confidence_threshold": 0.25,
+  "iou_threshold": 0.45,
+  "imgsz": 640,
+  "device": "cpu",
+  "updated_at": "2026-11-25T12:00:00Z"
+}

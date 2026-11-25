@@ -1,0 +1,222 @@
+{
+  "benchmark_results": [
+    {
+      "id": "img_01_3402617700_01009",
+      "filename": "img_01_3402617700_01009.jpg",
+      "category": "critical_defect",
+      "dataset_provenance": {
+        "dataset": "GC10-DET",
+        "split": "test (held-out)",
+        "sha256": "2cdb2c9a9830c4ad36a15f564318a28a53f4541186c02730a478bac590990064"
+      },
+      "yolo_detection": {
+        "model_version": "v2.0-neu-inclusion",
+        "device": "cpu",
+        "latency_ms": 916.62,
+        "detection_count": 2,
+        "detections": [
+          {
+            "class_name": "Crescent Gap",
+            "confidence": 0.8401,
+            "bbox_xyxy": [
+              1711,
+              309,
+              1983,
+              866
+            ],
+            "area_px": 151504,
+            "criticality": "CRITICAL"
+          },
+          {
+            "class_name": "Welding Line",
+            "confidence": 0.5916,
+            "bbox_xyxy": [
+              1898,
+              600,
+              2048,
+              661
+            ],
+            "area_px": 9150,
+            "criticality": "HIGH"
+          }
+        ]
+      },
+      "deterministic_quality_assessment": {
+        "verdict": "REJECT",
+        "recommended_action": "Hold the workpiece for operator disposition under the configured rejection policy.",
+        "explanation": "Critical perforation / edge gap defect (3_yueyawan) detected. Risk of coil breakage under rolling tension. | Discontinuity defect (2_hanfeng, count: 1) requires station operator verification for crop shear.",
+        "warnings": [
+          "Engineering policy only; acceptance thresholds are not a certified steel standard.",
+          "Pixel areas are not physical measurements; camera calibration is required.",
+          "Submitted evidence provenance is not independently verified."
+        ]
+      }
+    },
+    {
+      "id": "img_02_4402623300_00034",
+      "filename": "img_02_4402623300_00034.jpg",
+      "category": "inclusion_defect",
+      "dataset_provenance": {
+        "dataset": "GC10-DET",
+        "split": "test (held-out)",
+        "sha256": "0a7d9a9c5cfa4ea18fac1f92407d087c916a7dcf785530bf7ef366c2f2373dc6"
+      },
+      "yolo_detection": {
+        "model_version": "v2.0-neu-inclusion",
+        "device": "cpu",
+        "latency_ms": 25.08,
+        "detection_count": 1,
+        "detections": [
+          {
+            "class_name": "Inclusion",
+            "confidence": 0.3505,
+            "bbox_xyxy": [
+              363,
+              137,
+              496,
+              266
+            ],
+            "area_px": 17157,
+            "criticality": "HIGH"
+          }
+        ]
+      },
+      "deterministic_quality_assessment": {
+        "verdict": "REJECT",
+        "recommended_action": "Hold the workpiece for operator disposition under the configured rejection policy.",
+        "explanation": "Metallurgical foreign particles/scale detected (max area: 17157 px\u00b2). Threshold: 5,000 px\u00b2.",
+        "warnings": [
+          "Engineering policy only; acceptance thresholds are not a certified steel standard.",
+          "Pixel areas are not physical measurements; camera calibration is required.",
+          "Submitted evidence provenance is not independently verified."
+        ]
+      }
+    },
+    {
+      "id": "img_01_425006600_00905",
+      "filename": "img_01_425006600_00905.jpg",
+      "category": "minor_defect",
+      "dataset_provenance": {
+        "dataset": "GC10-DET",
+        "split": "test (held-out)",
+        "sha256": "dd5e28e918a008c01c943795a62b4f379a54a759dc7903533b903071690e93e8"
+      },
+      "yolo_detection": {
+        "model_version": "v2.0-neu-inclusion",
+        "device": "cpu",
+        "latency_ms": 23.02,
+        "detection_count": 1,
+        "detections": [
+          {
+            "class_name": "Water Spot",
+            "confidence": 0.8733,
+            "bbox_xyxy": [
+              1334,
+              276,
+              1665,
+              644
+            ],
+            "area_px": 121808,
+            "criticality": "LOW"
+          }
+        ]
+      },
+      "deterministic_quality_assessment": {
+        "verdict": "REVIEW REQUIRED",
+        "recommended_action": "Route the workpiece to operator review before disposition.",
+        "explanation": "Excessive fluid pooling requires wipe-down review.",
+        "warnings": [
+          "Engineering policy only; acceptance thresholds are not a certified steel standard.",
+          "Pixel areas are not physical measurements; camera calibration is required.",
+          "Submitted evidence provenance is not independently verified."
+        ]
+      }
+    },
+    {
+      "id": "clean_steel_strip_000789191",
+      "filename": "000789191.jpg",
+      "category": "clean_sample",
+      "dataset_provenance": {
+        "dataset": "Severstal Steel Strip Defect Detection",
+        "split": "test (held-out, test_manifest.csv has_defect=0)",
+        "sha256": "49d473c245106cb61a32179d7606a6d72c92ee4e49c4989ea54b168f5a348fb5"
+      },
+      "yolo_detection": {
+        "model_version": "v2.0-neu-inclusion",
+        "device": "cpu",
+        "latency_ms": 17.5,
+        "detection_count": 0,
+        "detections": []
+      },
+      "deterministic_quality_assessment": {
+        "verdict": "PASS",
+        "recommended_action": "Confirm image coverage and applicable acceptance policy before releasing the workpiece.",
+        "explanation": "Zero surface defects detected. Workpiece conforms to prime steel strip quality standard.",
+        "warnings": [
+          "Engineering policy only; acceptance thresholds are not a certified steel standard.",
+          "Pixel areas are not physical measurements; camera calibration is required.",
+          "Submitted evidence provenance is not independently verified.",
+          "No detections does not establish a defect-free surface."
+        ]
+      },
+      "unet_segmentation": {
+        "device": "cpu",
+        "latency_ms": 217.29,
+        "has_defect": false,
+        "active_classes": [],
+        "defect_percentage": 0.0,
+        "total_defect_pixels": 0
+      }
+    },
+    {
+      "id": "severstal_scratch_0007a71bf",
+      "filename": "0007a71bf.jpg",
+      "category": "segmentation_defect",
+      "dataset_provenance": {
+        "dataset": "Severstal Steel Strip Defect Detection",
+        "split": "test (held-out, test_manifest.csv has_defect=1, Class 3)",
+        "sha256": "3bb6d39d4b4c2c60c2333d37804a389314899ea20dc976c1aca1d8bc0047ebc6"
+      },
+      "yolo_detection": {
+        "model_version": "v2.0-neu-inclusion",
+        "device": "cpu",
+        "latency_ms": 15.02,
+        "detection_count": 1,
+        "detections": [
+          {
+            "class_name": "Welding Line",
+            "confidence": 0.3716,
+            "bbox_xyxy": [
+              182,
+              233,
+              1332,
+              256
+            ],
+            "area_px": 26450,
+            "criticality": "HIGH"
+          }
+        ]
+      },
+      "deterministic_quality_assessment": {
+        "verdict": "REVIEW REQUIRED",
+        "recommended_action": "Route the workpiece to operator review before disposition.",
+        "explanation": "Discontinuity defect (2_hanfeng, count: 1) requires station operator verification for crop shear.",
+        "warnings": [
+          "Engineering policy only; acceptance thresholds are not a certified steel standard.",
+          "Pixel areas are not physical measurements; camera calibration is required.",
+          "Submitted evidence provenance is not independently verified."
+        ]
+      },
+      "unet_segmentation": {
+        "device": "cpu",
+        "latency_ms": 229.29,
+        "has_defect": true,
+        "active_classes": [
+          "Scratches"
+        ],
+        "defect_percentage": 2.9141,
+        "total_defect_pixels": 11936
+      }
+    }
+  ]
+}
